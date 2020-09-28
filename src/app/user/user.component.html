@@ -1,0 +1,24 @@
+<div class="user-form">
+  <div class="user-dropdown">
+    <h4>Select User From The Dropdown - Local JSON</h4>
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <select   class="select-css">
+        <option *ngFor="let user of users">
+          <a routerLink="/getusers/{{nul.id}}"><span> {{user.first_name}}
+          {{user.id}}</span></a>
+        </option>
+        
+      </select>
+      <button type="submit">Submit</button>
+      </form>
+  </div>
+</div>
+
+<div>
+  <ul>
+    <li  *ngFor="let nul of users">
+      <a routerLink="/getusers/{{nul.id}}"><span>{{nul.first_name}}</span>
+        <span>{{nul.id}}</span></a>
+    </li>
+  </ul>
+</div>

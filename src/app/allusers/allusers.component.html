@@ -1,0 +1,20 @@
+<div class="user-form">
+    <div class="user-dropdown">
+      <h4>Select User From The Dropdown</h4>
+      <select (change)="userEmp($event)" class="select-css">
+        <option *ngFor="let user of users.data">
+       {{user.first_name}}
+        </option>
+      </select>
+    </div>
+    <div class="user-submit"><button mat-raised-button color="primary">Submit</button></div>
+  </div>
+  <div class="user-form">
+    <ul>
+      <li  *ngFor="let user of users.data" >
+        <a routerLink="/getusers/{{user.id}}" ><span>{{user.first_name}}</span>
+          <span>{{usersname}}</span>
+          </a>
+      </li>
+    </ul>
+  </div>
